@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import CareersHeroSection from "./components/CareersHeroSection";
+import CareerPage from "./components/careers/CareerPage";
+import ListWithUsSection from "./components/ListWithUsSection";
+import WhyUsSection from "./components/WhyUsSection";
+import TSDCareersPage from "./components/TSDCareersPage";
+import FaqPage from "./components/faq";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CareersHeroSection/>
+      <CareerPage />
+      <ListWithUsSection />
+      <WhyUsSection/>
+      <TSDCareersPage/>
+      <FaqPage/>
+    </>
   );
 }
 
