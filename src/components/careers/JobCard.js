@@ -1,4 +1,4 @@
-// components/careers/JobCard.js
+
 import React from "react";
 
 function JobCard({ job }) {
