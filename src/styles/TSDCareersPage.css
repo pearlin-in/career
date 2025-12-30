@@ -1,13 +1,7 @@
 .tsd-careers-section {
-  background: #FFF6ED;
-  width: 100vw;
+  width: 100%;
   margin: 0;
-  padding: 0 0 36px 0;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  padding: 50px 0 36px 0;
   box-shadow: none;
   border-radius: 0;
 }
@@ -15,22 +9,22 @@
 .tsd-careers-inner {
   display: flex;
   gap: 46px;
-  padding: 36px 4vw 0 4vw;
+  padding: 0 4vw;
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .tsd-filters {
   width: 270px;
-  background: #FFF9F3;
+  background: #f8f9fc;
   border-radius: 22px;
-  box-shadow: 0 2px 24px #F9731612;
+  box-shadow: 0 2px 24px #18204612;
   padding: 28px 20px 18px 20px;
   display: flex;
   flex-direction: column;
   gap: 14px;
   align-items: stretch;
-  border: 2px solid #FFD8AC;
+  border: 2px solid #d1d7e8;
   min-width: 220px;
 }
 
@@ -44,119 +38,114 @@
 .tsd-search {
   padding: 10px 13px;
   border-radius: 9px;
-  border: 2px solid #FFE6CC;
+  border: 2px solid #d1d7e8;
   background: #fff;
   font-size: 15px;
   color: #182046;
   font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.tsd-search:focus { border-color: #F97316; outline: none; }
+.tsd-search:focus { 
+  border-color: #F97316; 
+  outline: none; 
+}
 
 .tsd-select {
   padding: 10px 13px;
   border-radius: 10px;
-  border: 2px solid #FFD8AC;
+  border: 2px solid #d1d7e8;
   background: #fff;
   font-size: 15px;
   color: #182046;
   font-family: inherit;
   margin: 2px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.tsd-select:focus, .tsd-select:hover { border-color: #182046; }
-
-.tsd-emirate-chip-row {
-  display: flex; flex-wrap: wrap; gap: 9px; padding: 6px 0 11px 0;
+.tsd-select:focus, .tsd-select:hover { 
+  border-color: #F97316; 
 }
-
-.tsd-chip {
-  padding: 7px 15px;
-  border-radius: 999px;
-  border: 2px solid #FFE6CC;
-  background: #FFF6ED;
-  color: #F97316;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.18s, border 0.18s, color 0.19s;
-}
-
-.tsd-chip:hover,
-.tsd-chip--active {
-  background: #F97316;
-  color: #fff;
-  border-color: #F97316;
-}
-
 
 .tsd-switch-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: space-between;
   font-size: 15px;
   font-weight: 600;
-  color: #f97316;
+  color: #182046;
   margin: 6px 0 10px 0;
+  padding: 8px 0;
 }
+
 .tsd-switch {
   position: relative;
   width: 44px;
   height: 24px;
   display: inline-block;
 }
+
 .tsd-switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
+
 .tsd-slider {
   position: absolute;
   cursor: pointer;
-  top: 0; left: 0;
-  right: 0; bottom: 0;
-  background: #FFD8AC;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #d1d7e8;
   border-radius: 20px;
   transition: background 0.22s;
 }
+
 .tsd-switch input:checked + .tsd-slider {
   background: #F97316;
 }
+
 .tsd-slider:before {
   position: absolute;
   content: "";
-  height: 18px; width: 18px;
-  left: 4px; top: 3px;
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  top: 3px;
   background: #fff;
   border-radius: 50%;
   transition: transform 0.22s;
   box-shadow: 0 1.5px 6px #F9731612;
 }
+
 .tsd-switch input:checked + .tsd-slider:before {
   transform: translateX(20px);
 }
 
-
 .tsd-clear-btn {
-  background: #182046; color: #fff;
-  font-size: 13px; font-weight: 700; padding: 10px;
-  border: none; border-radius: 12px; margin-top: 4px;
-  cursor: pointer; transition: background 0.17s;
+  background: #182046;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  margin-top: 4px;
+  cursor: pointer;
+  transition: background 0.17s;
+  width: 100%;
 }
 
-.tsd-clear-btn:hover { background: #F97316; }
-
-.tsd-jobs { flex: 1 0 0; min-width: 0; }
-.tsd-jobs-main-title {
-  font-size: 2.1rem; font-weight: 900;
-  color: #182046; margin-bottom: 9px;
-  letter-spacing: 0.01em;
+.tsd-clear-btn:hover { 
+  background: #F97316; 
 }
-.tsd-jobs-desc {
-  font-size: 1.11rem;
-  color: #bb7609;
-  margin-bottom: 21px;
-  font-weight: 600;
+
+.tsd-jobs { 
+  flex: 1;
 }
 
 .tsd-jobs-grid {
@@ -170,43 +159,101 @@
   font-size: 1.05rem;
   font-weight: 700;
   padding: 30px 0;
+  text-align: center;
+  grid-column: 1 / -1;
 }
 
 .tsd-card {
-  display: block; background: #fff;
+  display: block;
+  background: #fff;
   border-radius: 19px;
   box-shadow: 0 7px 38px #18204611;
-  border: 2px solid #FFE6CC;
+  border: 2px solid #d1d7e8;
   padding: 22px 22px 16px;
-  position: relative; color: #182046;
+  position: relative;
+  color: #182046;
   text-decoration: none;
   transition: border-color 0.18s, box-shadow 0.19s, transform 0.14s, background 0.15s;
 }
+
 .tsd-card:focus, .tsd-card:hover {
-  border-color: #F97316; background: #FFF3E1;
+  border-color: #F97316;
+  background: #FFF3E1;
   box-shadow: 0 15px 35px #f9731635;
   transform: translateY(-5px) scale(1.012);
 }
 
 .tsd-badge {
-  position: absolute; top: 15px; right: 18px;
-  background: #F97316; color: #fff;
-  border-radius: 5px; padding: 3px 11px;
-  font-size: 10.8px; font-weight: 800;
-  letter-spacing: 0.06em; text-transform: uppercase;
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  background: #F97316;
+  color: #fff;
+  border-radius: 5px;
+  padding: 3px 11px;
+  font-size: 10.8px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   box-shadow: 0 2px 7px #F9731618;
+  white-space: nowrap;
 }
 
-.tsd-badge--urgent { background: #f03e3e; }
-.tsd-badge--top { background: #faad3b; color: #182046; }
-.tsd-card-title {
-  font-size: 1.06rem; font-weight: 800; margin-bottom: 7px; color: #182046;
+.tsd-badge--urgent { 
+  background: #f03e3e;
 }
-.tsd-card-desc { font-size: 13.5px; color: #934c15; margin-bottom: 10px;}
+
+.tsd-badge--urgent::after {
+  content: " HIRE";
+}
+
+.tsd-card-title {
+  font-size: 1.06rem;
+  font-weight: 800;
+  margin-bottom: 7px;
+  color: #182046;
+  padding-right: 80px;
+}
+
+.tsd-card-desc { 
+  font-size: 13.5px;
+  color: #5a607d;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
 .tsd-card-meta {
-  display: flex; gap: 10px;
-  font-size: 12.5px; color:#2b2f45; font-weight: 600;}
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 12.5px;
+  color: #2b2f45;
+  font-weight: 600;
+}
+
 @media (max-width: 900px) {
-  .tsd-careers-inner { flex-direction: column; gap: 22px; align-items: stretch;}
-  .tsd-filters { width: 100%; min-width: unset; flex-direction: row; flex-wrap: wrap; gap: 9px; padding: 18px 4vw 11px;}
+  .tsd-careers-inner { 
+    flex-direction: column;
+    gap: 22px;
+  }
+  
+  .tsd-filters { 
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 9px;
+    padding: 18px 4vw 11px;
+  }
+  
+  .tsd-search,
+  .tsd-select,
+  .tsd-clear-btn {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .tsd-switch-row {
+    flex: 1 0 100%;
+    justify-content: space-between;
+  }
 }

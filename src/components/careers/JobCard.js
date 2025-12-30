@@ -1,4 +1,3 @@
-
 import React from "react";
 
 function JobCard({ job }) {
@@ -6,6 +5,8 @@ function JobCard({ job }) {
   if (job.badge === "Top Role") badgeClass += " job-tag--top";
   else if (job.badge === "Urgent") badgeClass += " job-tag--urgent";
   else if (job.badge === "New") badgeClass += " job-tag--new";
+
+  const badgeText = job.badge === "Urgent" ? "URGENT HIRE" : job.badge;
 
   return (
     <a
@@ -15,7 +16,7 @@ function JobCard({ job }) {
       className="job-card-link"
     >
       <article className="job-card">
-        {job.badge && <span className={badgeClass}>{job.badge}</span>}
+        {job.badge && <span className={badgeClass}>{badgeText}</span>}
 
         <h3 className="job-card-title">{job.title}</h3>
 

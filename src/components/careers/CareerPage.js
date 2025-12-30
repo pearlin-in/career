@@ -20,7 +20,6 @@ function CareerPage() {
   const [emirate, setEmirate] = useState("All"); 
   const [onlyUrgent, setOnlyUrgent] = useState(false);
 
-
   const clearFilters = () => {
     setSearchQuery("");
     setEmploymentType("All");
@@ -76,7 +75,13 @@ function CareerPage() {
             placeholder="Explore What's Out There"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            list="job-suggestions"
           />
+          <datalist id="job-suggestions">
+            {jobs.map(job => (
+              <option key={job.id} value={job.title} />
+            ))}
+          </datalist>
 
           <select
             className="select"
@@ -110,6 +115,11 @@ function CareerPage() {
             <option value="Technical">Technical</option>
             <option value="Operations">Operations</option>
             <option value="Finance">Finance</option>
+            <option value="Human Resources">Human Resources</option>
+            <option value="Sales">Sales</option>
+            <option value="Customer Support">Customer Support</option>
+            <option value="Product">Product</option>
+            <option value="Design">Design</option>
           </select>
 
           <div className="uae-switch-row">
@@ -123,7 +133,6 @@ function CareerPage() {
               <span className="uae-slider"></span>
             </label>
           </div>
-
 
           <button className="clearButton" type="button" onClick={clearFilters}>
             Clear All

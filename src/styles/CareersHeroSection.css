@@ -1,11 +1,11 @@
 .careers-hero {
   position: relative;
   width: 100vw;
-  min-height: 600px;
+  min-height: 720px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 0 54px 0;
+  padding: 80px 0 70px 0;
   left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;
   overflow: hidden;
 }
@@ -32,27 +32,27 @@
   color: #fff;
   text-align: center;
   width: 100%;
-  max-width: 760px;
+  max-width: 850px;
   margin: 0 auto;
-  padding: 8px 16px;
+  padding: 16px 24px;
 }
 
 .careers-hero-content h1 {
-  font-size: 2.9rem;
+  font-size: 3.8rem;
   font-weight: 900;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
   letter-spacing: 0.01em;
   text-shadow: 0 4px 16px #1e2a4455;
 }
 
 .careers-hero-content p {
-  font-size: 1.22rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  line-height: 1.7;
+  line-height: 1.8;
   color: #f5f8fd;
   text-shadow: 0 2px 8px #1a235244;
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 700px;
 }
  
 @media (max-width: 600px) {

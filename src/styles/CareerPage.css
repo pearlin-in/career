@@ -285,8 +285,10 @@ body {
 }
 
 .job-tag--urgent {
-  background: #ffd2da;
-  color: #b9305a;
+  background: #ff4757;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2.5px 10px rgba(255, 71, 87, 0.3);
 }
 
 .job-tag--new {
@@ -364,4 +366,31 @@ body {
     grid-template-columns: minmax(0, 1fr);
     gap: 13px;
   }
+
+  .search {
+  flex: 1 1 240px;
+  max-width: 330px;
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: 1.5px solid #dee2ec;
+  background: #f7f9fa;
+  font-size: 14px;
+  transition: border 0.2s, box-shadow 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.search:focus {
+  border: 1.5px solid #7a87e4;
+  outline: none;
+  box-shadow: 0 0 0 2px #bcd0fc4d;
+}
+
+
+#job-suggestions option {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #475175;
+  background: #f7f9fa;
+}
 }

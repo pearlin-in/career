@@ -5,14 +5,12 @@ import tsdJobs from "../data/tsdJobs";
 const departments = ["All", "Marketing", "Technical", "Operations", "Finance"];
 const workTypes = ["All", "Remote", "Hybrid", "On-site"];
 const employmentTypes = ["All", "Full Time", "Part Time", "Internship"];
-const emirates = ["All", "Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Fujairah", "RAK"];
 
 const TSDCareersPage = () => {
   const [search, setSearch] = useState("");
   const [department, setDepartment] = useState("All");
   const [workType, setWorkType] = useState("All");
   const [employmentType, setEmploymentType] = useState("All");
-  const [emirate, setEmirate] = useState("All");
   const [onlyUrgent, setOnlyUrgent] = useState(false);
 
   function clearFilters() {
@@ -20,7 +18,6 @@ const TSDCareersPage = () => {
     setDepartment("All");
     setWorkType("All");
     setEmploymentType("All");
-    setEmirate("All");
     setOnlyUrgent(false);
   }
 
@@ -34,11 +31,10 @@ const TSDCareersPage = () => {
       if (department !== "All" && job.department !== department) return false;
       if (workType !== "All" && job.workType !== workType) return false;
       if (employmentType !== "All" && job.employmentType !== employmentType) return false;
-      if (emirate !== "All" && job.location !== emirate) return false;
       if (onlyUrgent && job.badge !== "Urgent") return false;
       return true;
     });
-  }, [search, department, workType, employmentType, emirate, onlyUrgent]);
+  }, [search, department, workType, employmentType, onlyUrgent]);
 
   return (
     <section className="tsd-careers-section">
@@ -50,42 +46,36 @@ const TSDCareersPage = () => {
             placeholder="Search roles…"
             value={search}
             onChange={e => setSearch(e.target.value)}
+            list="job-suggestions"
           />
+          <datalist id="job-suggestions">
+            {tsdJobs.map(job => (
+              <option key={job.id} value={job.title} />
+            ))}
+          </datalist>
           <select className="tsd-select" value={department} onChange={e => setDepartment(e.target.value)}>
-          <option disabled value="All">Department</option>
-          {departments.slice(1).map(dep => <option key={dep}>{dep}</option>)}
+            <option disabled value="All">Department</option>
+            {departments.slice(1).map(dep => <option key={dep}>{dep}</option>)}
           </select>
           <select className="tsd-select" value={workType} onChange={e => setWorkType(e.target.value)}>
-          <option disabled value="All">Work Type</option>
-          {workTypes.slice(1).map(wt => <option key={wt}>{wt}</option>)}
+            <option disabled value="All">Work Type</option>
+            {workTypes.slice(1).map(wt => <option key={wt}>{wt}</option>)}
           </select>
           <select className="tsd-select" value={employmentType} onChange={e => setEmploymentType(e.target.value)}>
-          <option disabled value="All">Employment Type</option>
-          {employmentTypes.slice(1).map(et => <option key={et}>{et}</option>)}
+            <option disabled value="All">Employment Type</option>
+            {employmentTypes.slice(1).map(et => <option key={et}>{et}</option>)}
           </select>
 
-          <div className="tsd-emirate-chip-row">
-            {emirates.slice(1).map(e => (
-              <button
-                key={e}
-                className={"tsd-chip" + (emirate === e ? " tsd-chip--active" : "")}
-                onClick={() => setEmirate(emirate === e ? "All" : e)}
-                type="button"
-              >
-                {e}
-              </button>
-            ))}
-          </div>
           <div className="tsd-switch-row">
-          <span>Urgent Hire</span>
-          <label className="tsd-switch">
+            <span>Urgent Hire</span>
+            <label className="tsd-switch">
               <input
-              type="checkbox"
-              checked={onlyUrgent}
-              onChange={() => setOnlyUrgent(v => !v)}
+                type="checkbox"
+                checked={onlyUrgent}
+                onChange={() => setOnlyUrgent(v => !v)}
               />
               <span className="tsd-slider"></span>
-          </label>
+            </label>
           </div>
 
           <button className="tsd-clear-btn" type="button" onClick={clearFilters}>Reset Filters</button>

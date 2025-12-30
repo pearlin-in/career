@@ -1,23 +1,23 @@
 .careers-bottom-row {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   justify-content: center;
   align-items: stretch;
   width: 100%;
-  max-width: 1250px;
-  margin: 0 auto 66px auto;
-  padding: 22px 0 48px 0;
+  max-width: 1100px;
+  margin: 0 auto 50px auto;
+  padding: 100px 0 0px 0;
   flex-wrap: wrap;
 }
 
 .careers-email-card,
 .careers-faq-card {
-  flex: 1 1 340px;
+  flex: 1 1 300px;
   background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2.5px 22px #254eb214;
-  padding: 32px 32px 22px 32px;
-  min-width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 2px 18px #254eb20f;
+  padding: 32px 24px 18px;
+  min-width: 280px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -25,15 +25,16 @@
 
 .careers-email-card h2,
 .careers-faq-card h2 {
-  font-size: 1.45rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: #2050a7;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .careers-email-card b {
   color: #182046;
   font-weight: 700;
+  font-size: 1.02rem;
 }
 
 .careers-email-card a {
@@ -41,34 +42,41 @@
   font-weight: 500;
   text-decoration: underline;
   transition: color 0.12s;
+  font-size: 0.98rem;
 }
+
 .careers-email-card a:hover {
   color: #d05f10;
 }
 
 .careers-email-card p {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #22294a;
-  font-size: 1.04rem;
-  line-height: 1.6;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .careers-faq-card {
-  padding-top: 31px;
+  padding-top: 32px;
 }
 
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 10px;
 }
 
 .faq-item {
-  border-radius: 13px;
+  border-radius: 12px;
   background: #FAFBFF;
-  box-shadow: 0 1.5px 10px #508ad203;
-  border: 1.5px solid #edf0f6;
-  padding: 0 0;
+  box-shadow: 0 1px 8px #508ad202;
+  border: 1.2px solid #edf0f6;
+  padding: 0;
+  transition: box-shadow 0.2s;
+}
+
+.faq-item:hover {
+  box-shadow: 0 2px 10px #508ad210;
 }
 
 .faq-question {
@@ -78,27 +86,30 @@
   border: none;
   background: transparent;
   width: 100%;
-  font-size: 1.08rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #192c55;
-  padding: 18px 22px 18px 16px;
-  border-radius: 13px;
+  padding: 14px 18px 14px 14px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.11s;
+  transition: background 0.11s, color 0.11s;
   outline: none;
+  text-align: left;
 }
 
 .faq-question:focus,
 .faq-question:hover {
   background: #f3f7fe;
+  color: #2050a7;
 }
 
 .faq-arrow {
-  margin-left: 18px;
-  font-size: 1.1em;
+  margin-left: 14px;
+  font-size: 1em;
   color: #4071d0;
   transform: rotate(0deg);
-  transition: transform 0.22s;
+  transition: transform 0.22s, color 0.22s;
+  flex-shrink: 0;
 }
 
 .faq-arrow.open {
@@ -107,11 +118,13 @@
 }
 
 .faq-answer {
-  padding: 0 22px 18px 22px;
+  padding: 0 18px 14px 14px;
   color: #405076;
-  font-size: 0.98rem;
-  line-height: 1.6;
+  font-size: 0.92rem;
+  line-height: 1.5;
   animation: fadeInFAQ 0.28s;
+  border-top: 1px solid #edf0f6;
+  margin-top: 0;
 }
 
 @keyframes fadeInFAQ {
@@ -122,11 +135,29 @@
 @media (max-width: 950px) {
   .careers-bottom-row {
     flex-direction: column;
-    gap: 24px;
-    padding: 20px 0 24px 0;
+    gap: 20px;
+    padding: 32px 0 20px 0;
+    max-width: 600px;
   }
-  .careers-email-card, .careers-faq-card {
+  
+  .careers-email-card, 
+  .careers-faq-card {
     min-width: 0;
-    padding: 28px 14px 18px 14px;
+    padding: 28px 16px 16px;
+  }
+  
+  .careers-email-card h2,
+  .careers-faq-card h2 {
+    font-size: 1.2rem;
+  }
+  
+  .faq-question {
+    font-size: 0.98rem;
+    padding: 13px 16px 13px 12px;
+  }
+  
+  .faq-answer {
+    padding: 0 16px 13px 12px;
+    font-size: 0.9rem;
   }
 }
